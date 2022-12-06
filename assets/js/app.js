@@ -1,6 +1,9 @@
 let scores, roundScore, activePlayer;
 let gamePlaying = true;
 
+// Disable right-click
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 // Prompt user for nick name
 function getPlayerName(playerName) {
     playerName = prompt("Please enter your nickname");
@@ -8,16 +11,6 @@ function getPlayerName(playerName) {
 
 // document.querySelector(".opponent-1-cards").style.visibility = "hidden";
 // document.querySelector(".opponent-2-cards").style.visibility = "hidden";
-
-// Stop Audio Button
-document.getElementById('stopButton').addEventListener('click', () => {
-    if (bgAudio.paused) {
-        bgAudio.play();
-      }
-      else {
-        bgAudio.pause();
-      }
-  });
 
 // Init all audio sources
 const bgAudio = new Audio("https://cadogy.com/audio/bg-music.mp3");
@@ -34,6 +27,15 @@ bgAudio.play();
 bgAudio.volume = 0.03;
 bgAudio.loop = true;
 
+// Stop Audio Button
+document.getElementById('stopButton').addEventListener('click', () => {
+    if (bgAudio.paused) {
+        bgAudio.play();
+      }
+      else {
+        bgAudio.pause();
+      }
+  });
 
 // Card hover sound effects
 document.querySelector(".card-1").addEventListener("mouseover", function() {

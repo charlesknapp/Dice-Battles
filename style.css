@@ -75,6 +75,42 @@ span.scorebasedPill { background: rgba(0,0,0,0.80); padding: 8px; border-radius:
 p.instructions>ion-icon.md.hydrated:hover, span#stopButton>ion-icon.md.hydrated:hover { color: white; cursor: pointer;}
 button.btn-names, .btn-new { background: rgba(0,0,0,0.65); border-radius: 10px; margin: 0 auto; display: flex; justify-content: center; align-items: center; padding: 10px; position: fixed; }
 
+.manaTitle {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.left-playerManaBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+.left-playerManaBar>img {
+    margin-bottom: 10px;
+    animation: size-pulse 2s infinite;
+}
+.right-playerManaBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 78.5%;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+.right-playerManaBar>img {
+    margin-bottom: 10px;
+    animation: size-pulse 2s infinite;
+}
+
 .l-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
