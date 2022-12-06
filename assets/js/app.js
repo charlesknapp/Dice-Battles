@@ -21,6 +21,7 @@ document.getElementById('stopButton').addEventListener('click', () => {
 
 // Init all audio sources
 const bgAudio = new Audio("https://cadogy.com/audio/bg-music.mp3");
+const cardAudio = new Audio("https://cadogy.com/audio/card-flip.mp3")
 const tickingAudio = new Audio("https://cadogy.com/audio/clock-ticking.mp3");
 const holdAudio = new Audio("https://cadogy.com/audio/game-hold.mp3");
 const resetAudio = new Audio("https://cadogy.com/audio/reset-sound.mp3");
@@ -28,10 +29,85 @@ const winAudio = new Audio("https://cadogy.com/audio/game-win.mp3");
 const failAudio = new Audio("https://cadogy.com/audio/fail-roll.mp3");
 
 init();
-        // Start background music
-        bgAudio.play();
-        bgAudio.volume = 0.03;
-        bgAudio.loop = true;
+// Start background music
+bgAudio.play();
+bgAudio.volume = 0.03;
+bgAudio.loop = true;
+
+
+// Card hover sound effects
+document.querySelector(".card-1").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-1").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-2").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-2").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-3").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-3").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-4").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-4").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-5").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+    
+    document.querySelector(".card-4").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-6").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-4").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-7").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-4").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
+document.querySelector(".card-8").addEventListener("mouseover", function() {
+    cardAudio.play();
+    cardAudio.volume = 0.1;
+
+    document.querySelector(".card-4").addEventListener("mouseout", function() {
+        cardAudio.pause();
+        sound.currentTime = 0;
+    })
+})
 
 document.querySelector(".btn-roll").addEventListener("click", function(){
     if(gamePlaying) {
