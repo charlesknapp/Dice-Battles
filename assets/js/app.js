@@ -192,6 +192,11 @@ function nextPlayer() {
 document.querySelector(".btn-new").addEventListener("click", init);
 
 function init(){
+
+    $(window).on('load', function () {
+        $('#loading').hide();
+      }) 
+
     resetAudio.play();
     resetAudio.volume = 0.4;
     scores = [0,0];
@@ -211,8 +216,8 @@ function init(){
     document.getElementById("score-1").textContent = "0";
     document.getElementById("current-0").textContent = "0";
     document.getElementById("current-1").textContent = "0";
-    document.getElementById("name-0").textContent = "OPPONENT 1";
-    document.getElementById("name-1").textContent = "OPPONENT 2";
+    document.getElementById("name-0").textContent = "Waiting for opponent...";
+    document.getElementById("name-1").textContent = "Waiting for opponent...";
     document.querySelector(".player-0-panel").classList.remove("active");
     document.querySelector(".player-1-panel").classList.remove("active");
     document.querySelector(".player-0-panel").classList.remove("winner");
