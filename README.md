@@ -2,7 +2,7 @@
 
 Simple dice battling fun! Play against another opponent to reach your high-score!
 <br><br>
-<img src="https://i.ibb.co/99NfnkJ/dice-game-demo.gif">
+<img src="dice-game-demo.gif">
 <br>
 ## Simple Game Rules
 
