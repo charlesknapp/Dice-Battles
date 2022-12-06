@@ -6,6 +6,9 @@ function getPlayerName(playerName) {
     playerName = prompt("Please enter your nickname");
 }
 
+// document.querySelector(".opponent-1-cards").style.visibility = "hidden";
+// document.querySelector(".opponent-2-cards").style.visibility = "hidden";
+
 // Stop Audio Button
 document.getElementById('stopButton').addEventListener('click', () => {
     if (bgAudio.paused) {
@@ -117,6 +120,13 @@ function init(){
     activePlayer = 0;
     roundScore = 0;
 
+    document.querySelector('.btn-names').addEventListener('click', function() {
+        player1Name = prompt("Please enter the first player's name");
+        player2Name = prompt("Please enter the second player's name");
+
+        document.getElementById("name-0").textContent = player1Name;
+        document.getElementById("name-1").textContent = player2Name;
+    })
     // document.querySelector("#current-" + activePlayer).textContent = dice;
     document.querySelector(".dice").style.display = "none";
     document.getElementById("score-0").textContent = "0";
