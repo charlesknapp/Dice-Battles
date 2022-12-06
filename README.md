@@ -1,9 +1,11 @@
 # Dice Battles
 
+<p align="center">
 Simple dice battling fun! Play against another opponent to reach your high-score!
 <br><br>
 <img src="dice-game-demo.gif">
 <br>
+</p>
 ## Simple Game Rules
 
 - The game has 2-players, playing in rounds
