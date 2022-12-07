@@ -1,6 +1,6 @@
 let scores, roundScore, activePlayer;
 let gamePlaying = true;
-
+let endingScore = 100;
 // Disable right-click
 document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -13,13 +13,14 @@ function getPlayerName(playerName) {
 // document.querySelector(".opponent-2-cards").style.visibility = "hidden";
 
 // Init all audio sources
-const bgAudio = new Audio("https://cadogy.com/audio/bg-music.mp3");
-const cardAudio = new Audio("https://cadogy.com/audio/card-flip.mp3")
-const tickingAudio = new Audio("https://cadogy.com/audio/clock-ticking.mp3");
-const holdAudio = new Audio("https://cadogy.com/audio/game-hold.mp3");
-const resetAudio = new Audio("https://cadogy.com/audio/reset-sound.mp3");
-const winAudio = new Audio("https://cadogy.com/audio/game-win.mp3");
-const failAudio = new Audio("https://cadogy.com/audio/fail-roll.mp3");
+const rollAudio = new Audio("/assets/audio/game-click.mp3");
+const bgAudio = new Audio("/assets/audio/bg-music.mp3");
+const cardAudio = new Audio("/assets/audio/card-flip.mp3")
+const tickingAudio = new Audio("/assets/audio/clock-ticking.mp3");
+const holdAudio = new Audio("/assets/audio/game-hold.mp3");
+const resetAudio = new Audio("/assets/audio/reset-sound.mp3");
+const winAudio = new Audio("/assets/audio/game-win.mp3");
+const failAudio = new Audio("/assets/audio/fail-roll.mp3");
 
 init();
 // Start background music
@@ -140,10 +141,10 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
 });
 document.querySelector(".btn-hold").addEventListener("click", function(){
     if(gamePlaying){
-        // Add currentScore to globalScore
+        // Add currentScore to total Score
         scores[activePlayer] += roundScore;
 
-        // Update the UI to show the globalScore
+        // Update the UI to show the total Score
         document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer];
 
         // Play holding audio
@@ -151,11 +152,12 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
         holdAudio.volume = 0.3;
 
         // Check if player won the game
-        if(scores[activePlayer] >= 100){
+        if(scores[activePlayer] >= endingScore){
             document.querySelector("#name-" + activePlayer).textContent = "Winner!";
             document.querySelector(".dice").style.display = "none";
             document.querySelector(".player-" + activePlayer + "-panel").classList.add("winner");
             document.querySelector(".player-" + activePlayer + "-panel").classList.remove("active");
+            bgAudio.pause();
             winAudio.play();
             winAudio.volume = 0.4;
             gamePlaying = false;
@@ -165,8 +167,6 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
     }
 })
 
-// GAME BUTTON AUDIO
-const rollAudio = new Audio("https://cadogy.com/audio/game-click.mp3");
 const buttons = document.querySelectorAll(".btn-roll");
 
 buttons.forEach(button => {
