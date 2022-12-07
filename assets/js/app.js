@@ -216,8 +216,8 @@ function init(){
     document.getElementById("score-1").textContent = "0";
     document.getElementById("current-0").textContent = "0";
     document.getElementById("current-1").textContent = "0";
-    document.getElementById("name-0").textContent = "Waiting for opponent...";
-    document.getElementById("name-1").textContent = "Waiting for opponent...";
+    document.getElementById("name-0").textContent = "Waiting...";
+    document.getElementById("name-1").textContent = "Waiting...";
     document.querySelector(".player-0-panel").classList.remove("active");
     document.querySelector(".player-1-panel").classList.remove("active");
     document.querySelector(".player-0-panel").classList.remove("winner");
