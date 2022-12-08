@@ -39,78 +39,78 @@ document.getElementById('stopButton').addEventListener('click', () => {
   });
 
 // Card hover sound effects
-document.querySelector(".card-1").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+// document.querySelector(".card-1").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-1").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-2").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-1").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-2").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-2").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-3").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-2").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-3").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-3").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-4").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-3").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-4").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-4").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-5").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-4").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-5").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
     
-    document.querySelector(".card-4").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-6").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-4").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-6").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-4").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-7").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-4").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-7").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-4").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
-document.querySelector(".card-8").addEventListener("mouseover", function() {
-    cardAudio.play();
-    cardAudio.volume = 0.1;
+//     document.querySelector(".card-4").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
+// document.querySelector(".card-8").addEventListener("mouseover", function() {
+//     cardAudio.play();
+//     cardAudio.volume = 0.1;
 
-    document.querySelector(".card-4").addEventListener("mouseout", function() {
-        cardAudio.pause();
-        sound.currentTime = 0;
-    })
-})
+//     document.querySelector(".card-4").addEventListener("mouseout", function() {
+//         cardAudio.pause();
+//         sound.currentTime = 0;
+//     })
+// })
 
 document.querySelector(".btn-roll").addEventListener("click", function(){
     if(gamePlaying) {
@@ -157,6 +157,8 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
             document.querySelector(".dice").style.display = "none";
             document.querySelector(".player-" + activePlayer + "-panel").classList.add("winner");
             document.querySelector(".player-" + activePlayer + "-panel").classList.remove("active");
+            document.getElementById("winningScoreNumber").innerHTML = `Game over! Try again!`;
+
             bgAudio.pause();
             winAudio.play();
             winAudio.volume = 0.4;
@@ -203,6 +205,7 @@ function init(){
     activePlayer = 0;
     roundScore = 0;
 
+    // Adding names to players
     document.querySelector('.btn-names').addEventListener('click', function() {
         player1Name = prompt("Please enter the first player's name");
         player2Name = prompt("Please enter the second player's name");
@@ -210,7 +213,15 @@ function init(){
         document.getElementById("name-0").textContent = player1Name;
         document.getElementById("name-1").textContent = player2Name;
     })
+
+    // Modifying the winning score
+    document.querySelector('.btn-scoreSetter').addEventListener('click', function() {
+        endingScore = prompt("Enter the winning score number");
+        document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} to win!`;
+    })
+
     // document.querySelector("#current-" + activePlayer).textContent = dice;
+    document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} to win!`;
     document.querySelector(".dice").style.display = "none";
     document.getElementById("score-0").textContent = "0";
     document.getElementById("score-1").textContent = "0";
