@@ -6,6 +6,7 @@ GENERAL STYLING
 html {margin: 0; padding: 0; overflow: hidden;}
 .clearfix::after {content: ""; display: table; clear: both;}
 body {background-image: linear-gradient(rgb(255 255 255 / 40%), rgb(149 0 0 / 40%)), url(/assets/img/background.jpg); background-size: cover; background-position: center; font-family: Lato; font-weight: 300; position: relative; height: 100vh; color: white; padding-top: 10px;}
+body::before {position: absolute;content: "";top: 0;left: 0;width: 100vw;height: 100vh;background-image: linear-gradient(rgb(255 255 255 / 40%), rgb(149 0 0 / 40%)), url(/assets/img/background.jpg);background-size: cover;background-position: center;z-index: -1;animation: size-pulse 60s infinite;}
 h1 {text-align: center; color: white;}
 h2 {text-align: center; color: white; margin-bottom: 40px;}
 p {text-align: center; color: white; margin-bottom: 20px;}
@@ -45,16 +46,7 @@ button:focus {outline: none;}
 i {color: Red; display: inline-block; margin-right: 15px; font-size: 32px; line-height: 1; vertical-align: text-top; margin-top: -4px; transition: margin 0.3s;}
 /* .btn-new { left: 40% !important;} */
 button.btn-names { right: 20% !important; }
-.utilityButtons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    top: 11%;
-    left: 22%;
-    position: absolute;
-    grid-gap: 20px;
-}
+.utilityButtons {display: flex;justify-content: center;align-items: center;margin: 0 auto;top: 11%;left: 22%;position: absolute;grid-gap: 20px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 .dice {position: absolute; left: 50%; top: 178px; transform: translateX(-50%); height: 100px; box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);}
@@ -123,20 +115,8 @@ POWERUPS AND CARDS STYLING
 .b-game-card.card-6 {rotate: -5deg;top: -10%;}
 .b-game-card.card-7 {rotate: 5deg;top: -10%;}
 .b-game-card.card-8 {rotate: 10deg;}
-
-.scoreNumber {
-    display: flex;
-    margin-top: 5%;
-}
-span#winningScoreNumber {
-    color: Silver;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0 auto;
-    background: rgba(0,0,0,0.65);
-}
+.scoreNumber {display: flex;margin-top: 5%;}
+span#winningScoreNumber {color: Silver;font-weight: bold;font-size: 20px;padding: 10px;border-radius: 10px;margin: 0 auto;background: rgba(0,0,0,0.65);}
 
 /**********************************************
 ANIMATIONS AND KEYFRAMES

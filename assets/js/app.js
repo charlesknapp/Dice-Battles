@@ -217,11 +217,11 @@ function init(){
     // Modifying the winning score
     document.querySelector('.btn-scoreSetter').addEventListener('click', function() {
         endingScore = prompt("Enter the winning score number");
-        document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} to win!`;
+        document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} total score to win!`;
     })
 
     // document.querySelector("#current-" + activePlayer).textContent = dice;
-    document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} to win!`;
+    document.getElementById("winningScoreNumber").innerHTML = `Reach ${endingScore} total score to win!`;
     document.querySelector(".dice").style.display = "none";
     document.getElementById("score-0").textContent = "0";
     document.getElementById("score-1").textContent = "0";
