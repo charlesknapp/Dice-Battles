@@ -8,12 +8,12 @@ Simple dice battling fun! Play against another opponent to reach your high-score
 </p>
 ## Simple Game Rules
 
-- The game has 2-players, playing in rounds
-- In each turn, a player rolls a dice as many times as they wish. Each result gets added to their round score
-- However, if the player rolls a 1, all their round score gets lost. After that, it's the next player's turn
-- The player can choose to 'Hold', which switched to the opponent and adds their round score.
+- Two players battle against each other in rounds.
+- Each turn, a player may roll the dice as many times as they want. Each roll gets added to their total score.
+- However, if the player rolls a #1, all their rolled score is lost for that round. Then it's the next player's turn.
+- The player can choose to 'Hold', which switches to the opponent and sums their round score.
 
-- The first player to reach 100 points on FINAL score wins the game
+- The first player to reach 100 score wins the game!
 <br><br>
 ## Roadmap
 
